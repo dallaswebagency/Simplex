@@ -122,40 +122,64 @@ nav.main a:hover::after{width:100%}
 .sv-preview .cap{position:absolute;left:0;bottom:0;background:#fff;padding:.9rem 1.3rem;font-weight:700;font-size:.9rem;z-index:2;display:flex;gap:.6rem;align-items:center}
 .sv-preview .cap i{width:9px;height:9px;background:var(--grad);display:inline-block}
 
-/* ===== why choose ===== */
-.why{background:var(--navy);color:#fff;padding:120px 0;position:relative;overflow:hidden}
-.why::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border:1px solid var(--line-dark);border-radius:50%;box-shadow:0 0 0 80px rgba(255,255,255,.02),0 0 0 160px rgba(255,255,255,.015)}
-.why-grid{display:grid;grid-template-columns:.95fr 1.3fr;gap:5rem;position:relative;z-index:1}
-.why-side{position:sticky;top:120px;align-self:start}
-.why .kicker{color:var(--aqua)}
-.why h2{font-size:clamp(2.3rem,4.2vw,3.6rem);margin:1rem 0 1.4rem}
-.why-side>p{color:rgba(255,255,255,.72);font-size:1.05rem}
-.why-side .img{margin-top:2.4rem;aspect-ratio:16/10;overflow:hidden}
-.why-side .img img{width:100%;height:100%;object-fit:cover}
-.why-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-dark)}
-.why-list article{padding:2.1rem 2rem 2.2rem 0;border-bottom:1px solid var(--line-dark)}
-.why-list article:nth-child(odd){border-right:1px solid var(--line-dark)}
-.why-list article:nth-child(even){padding-left:2rem;padding-right:0}
-.why-list .ix{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:.8rem;letter-spacing:.12em;color:var(--aqua)}
-.why-list h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:700;font-size:1.3rem;margin:.7rem 0 .55rem}
-.why-list p{color:rgba(255,255,255,.68);font-size:.95rem}
+/* ===== why choose (bento) ===== */
+.why{padding:120px 0;background:#fff}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(200px,auto);gap:18px}
+.bento>div{position:relative;overflow:hidden;padding:2rem 1.9rem;transition:transform .35s ease,box-shadow .35s ease}
+.b-head{grid-column:span 2;padding:0 2rem 1rem 0!important;display:flex;flex-direction:column;justify-content:flex-end}
+.b-head h2{font-size:clamp(2.3rem,4.2vw,3.6rem);margin:1rem 0 1.2rem}
+.b-head p{color:var(--muted);max-width:520px}
+.b-img{grid-column:3/5;grid-row:span 2;padding:0!important;min-height:440px}
+.b-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.b-img:hover img{transform:scale(1.05)}
+.b-img .tag{position:absolute;left:1.4rem;bottom:1.4rem;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:.85rem 1.1rem;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.6rem}
+.b-img .tag i{width:9px;height:9px;background:var(--grad)}
+.b-dark{background:var(--navy);color:#fff}
+.b-grad{background:var(--grad);color:#fff}
+.b-paper{background:var(--paper)}
+.b-ink{background:var(--ink);color:#fff}
+.b-line{border:1px solid var(--line);background:#fff}
+.bento>div:not(.b-head):not(.b-img):hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px rgba(10,22,32,.45)}
+.bento h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:800;font-size:1.25rem;line-height:1.2;margin-bottom:.55rem}
+.bento p{font-size:.94rem}
+.b-paper p,.b-line p{color:var(--muted)}
+.b-dark p,.b-grad p,.b-ink p{color:rgba(255,255,255,.78)}
+.b-grad p{color:rgba(255,255,255,.92)}
+.b-big{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:3.4rem;line-height:1;margin-bottom:1.2rem;display:block}
+.b-dark .b-big{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.b-stars{display:flex;gap:4px;margin-bottom:1.4rem}
+.b-stars svg{width:28px;height:28px;color:#fff}
+.b-ico{width:44px;height:44px;display:grid;place-items:center;background:#fff;color:var(--blue);margin-bottom:1.4rem}
+.b-paper .b-ico{box-shadow:0 6px 16px -8px rgba(10,22,32,.25)}
+.b-ico svg{width:22px;height:22px}
+.b-wide{grid-column:span 2;display:flex;align-items:center;gap:2rem}
+.b-wide .b-ico{flex:none;margin:0;width:64px;height:64px}
+.b-wide .b-ico svg{width:30px;height:30px}
+.b-ink .b-ico{background:rgba(255,255,255,.08);color:var(--aqua)}
+.b-wide h3{font-size:1.55rem}
 
-/* ===== standard ===== */
-.standard{padding:120px 0 110px}
-.std-banner{position:relative;height:420px;overflow:hidden}
-.std-banner img{width:100%;height:100%;object-fit:cover}
-.std-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,22,32,.88) 0%,rgba(10,22,32,.55) 45%,rgba(10,22,32,0) 75%)}
-.std-banner .txt{position:absolute;left:56px;top:50%;transform:translateY(-50%);z-index:2;color:#fff;max-width:520px}
-.std-banner .kicker{color:var(--aqua)}
-.std-banner h2{font-size:clamp(2.2rem,4.2vw,3.5rem);margin-top:1rem}
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin:-90px 56px 0;position:relative;z-index:3;background:#fff;box-shadow:0 30px 60px -30px rgba(10,22,32,.35)}
-.pillars article{padding:2.2rem 1.8rem 2.4rem;border-right:1px solid var(--line);position:relative}
-.pillars article:last-child{border-right:0}
-.pillars article::before{content:"";position:absolute;top:0;left:0;height:4px;width:0;background:var(--grad);transition:width .45s}
-.pillars article:hover::before{width:100%}
-.pillars .ico{width:46px;height:46px;color:var(--blue);margin-bottom:1.3rem}
-.pillars h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:800;font-size:1.25rem;margin-bottom:.6rem}
-.pillars p{font-size:.93rem;color:var(--muted)}
+/* ===== standard (full-bleed lobby) ===== */
+.standard{position:relative;min-height:860px;display:flex;flex-direction:column;justify-content:space-between;padding:110px 0 80px;color:#fff;overflow:hidden;isolation:isolate}
+.standard .bg{position:absolute;inset:0;z-index:-2}
+.standard .bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.standard::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,20,30,.86) 0%,rgba(8,20,30,.5) 36%,rgba(8,20,30,.35) 58%,rgba(8,20,30,.92) 100%)}
+.std-top{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:end}
+.std-top .kicker{color:var(--aqua)}
+.std-top .kicker::before{background:var(--aqua)}
+.std-top h2{font-size:clamp(2.4rem,5vw,4.4rem);margin-top:1rem}
+.std-top p{color:rgba(255,255,255,.82);font-size:1.05rem;border-left:2px solid var(--aqua);padding-left:1.3rem}
+.std-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:4rem}
+.std-card{position:relative;padding:2rem 1.7rem 2.1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .35s,color .35s,transform .35s}
+.std-card .no{position:absolute;top:1.2rem;right:1.4rem;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:2.6rem;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.45);transition:.35s}
+.std-card .ico{width:42px;height:42px;color:var(--aqua);margin-bottom:2.6rem;transition:color .35s}
+.std-card h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:800;font-size:1.22rem;margin-bottom:.6rem}
+.std-card p{font-size:.92rem;color:rgba(255,255,255,.8);transition:color .35s}
+.std-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.std-card:hover{background:#fff;color:var(--ink);transform:translateY(-8px)}
+.std-card:hover p{color:var(--muted)}
+.std-card:hover .ico{color:var(--blue)}
+.std-card:hover .no{-webkit-text-stroke-color:rgba(20,128,192,.5)}
+.std-card:hover::after{transform:scaleX(1)}
 
 /* ===== certifications ===== */
 .certs{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -240,16 +264,18 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
   .spec{grid-template-columns:1fr 1fr}
   .spec div:nth-child(2){border-right:0}
   .spec div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .special-row,.why-grid,.rv-grid{grid-template-columns:1fr;gap:2.5rem}
-  .why-side{position:static}
+  .special-row,.rv-grid{grid-template-columns:1fr;gap:2.5rem}
+  .bento{grid-template-columns:1fr 1fr}
+  .b-head{grid-column:1/-1}
+  .b-img{grid-column:1/-1;grid-row:auto;min-height:380px}
+  .std-top{grid-template-columns:1fr}
+  .std-cards{grid-template-columns:1fr 1fr}
+  .standard{min-height:0}
   .sv-grid{grid-template-columns:1fr}
   .sv-preview{display:none}
   .sv-item .mob-img{display:block;max-height:0;overflow:hidden;transition:max-height .45s;grid-column:2/4}
   .sv-item.active .mob-img{max-height:260px;margin-top:.4rem}
   .sv-item .mob-img img{width:100%;height:220px;object-fit:cover}
-  .pillars{grid-template-columns:1fr 1fr;margin:-70px 24px 0}
-  .pillars article:nth-child(2){border-right:0}
-  .pillars article:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .certs .wrap{grid-template-columns:1fr}
   .certs h2{border-right:0;border-bottom:1px solid var(--line);padding:2rem 0 1.4rem}
   .cert-row{flex-wrap:wrap;padding:1.6rem 0;justify-content:center}
@@ -273,12 +299,12 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
   .sv-head{flex-direction:column;align-items:flex-start}
   .sv-item{grid-template-columns:44px 1fr 36px}
   .sv-item h3{font-size:1.3rem}
-  .why-list{grid-template-columns:1fr}
-  .why-list article:nth-child(n){padding:1.7rem 0;border-right:0}
-  .std-banner{height:380px}
-  .std-banner .txt{left:24px;right:24px}
-  .pillars{grid-template-columns:1fr;margin:-50px 0 0}
-  .pillars article{border-right:0;border-bottom:1px solid var(--line)}
+  .why{padding:90px 0}
+  .bento{grid-template-columns:1fr}
+  .b-wide{grid-column:auto;flex-direction:column;align-items:flex-start;gap:1.2rem}
+  .b-img{min-height:300px}
+  .standard{padding:80px 0 60px}
+  .std-cards{grid-template-columns:1fr;margin-top:2.5rem}
   .cert-row img{height:56px}
   .rv-cards{grid-template-columns:1fr}
   .rv:nth-child(2){margin-top:0}
@@ -343,7 +369,7 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
       </div>
       <div class="hero-media">
         <div class="cut" style="position:absolute;inset:0;overflow:hidden">
-          <img src="images/office-crew-tall.jpg" alt="Simplex cleaning crew vacuuming carpet and cleaning glass in a commercial office">
+          <img src="images/hero-office-crew.jpg" alt="Simplex cleaning crew vacuuming carpet and cleaning glass in a commercial office">
         </div>
         <div class="stamp">
           <div class="yr">2009</div>
@@ -404,47 +430,47 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
         <div class="sv-item active" data-img="0">
           <span class="num">01</span>
           <div><h3>Janitorial Services</h3><p>Janitorial services for offices, healthcare facilities, retail facilities, multi-tenant, education facilities and more.</p>
-            <div class="mob-img"><img src="images/janitorial-cart-corridor.jpg" alt="Janitor pushing a cleaning cart down a commercial corridor"></div></div>
+            <div class="mob-img"><img src="images/svc-janitorial.jpg" alt="Janitor pushing a cleaning cart down a commercial corridor"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="sv-item" data-img="1">
           <span class="num">02</span>
           <div><h3>Disinfecting Service</h3><p>A disinfected space is critical to maintaining a healthy, productive environment. Simplex is here to help.</p>
-            <div class="mob-img"><img src="images/cleaning-supplies.jpg" alt="Cleaner holding a bucket of disinfecting supplies"></div></div>
+            <div class="mob-img"><img src="images/svc-disinfecting.jpg" alt="Gloved hand disinfecting a door handle"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="sv-item" data-img="2">
           <span class="num">03</span>
           <div><h3>Daytime Porter</h3><p>We help keep up with the daily traffic in your facility and maintain a consistent clean and healthy environment.</p>
-            <div class="mob-img"><img src="images/daytime-porter.jpg" alt="Day porter with cleaning cart in a busy facility"></div></div>
+            <div class="mob-img"><img src="images/svc-daytime-porter.jpg" alt="Day porter wiping the front desk in a condo lobby"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="sv-item" data-img="3">
           <span class="num">04</span>
           <div><h3>Deep Cleaning</h3><p>Intensive disinfection using EPA registered disinfectants. We will go above and beyond to do the job quickly and effectively.</p>
-            <div class="mob-img"><img src="images/floor-mopping-wide.jpg" alt="Microfiber mop deep cleaning a floor"></div></div>
+            <div class="mob-img"><img src="images/svc-deep-cleaning.jpg" alt="Floor scrubber deep cleaning a commercial washroom"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="sv-item" data-img="4">
           <span class="num">05</span>
           <div><h3>Green Cleaning</h3><p>We use toxin-free cleaning supplies, color coded microfibers, energy efficient equipment, and no airborne chemicals or allergens.</p>
-            <div class="mob-img"><img src="images/window-cleaning.jpg" alt="Gloved hands cleaning a window with a microfiber cloth"></div></div>
+            <div class="mob-img"><img src="images/svc-green-cleaning.jpg" alt="Refillable spray bottles and color coded microfiber cloths"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
         <div class="sv-item" data-img="5">
           <span class="num">06</span>
           <div><h3>Carpet &amp; Upholstery Cleaning</h3><p>Our professionally trained technicians utilize a 4-step cleaning process designed for carpets and upholstered surfaces.</p>
-            <div class="mob-img"><img src="images/carpet-vacuum.jpg" alt="Technician cleaning commercial carpet"></div></div>
+            <div class="mob-img"><img src="images/svc-carpet.jpg" alt="Technician extracting commercial office carpet"></div></div>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </div>
       <div class="sv-preview cut-bl" id="svPreview">
-        <img class="on" src="images/janitorial-cart-corridor.jpg" alt="">
-        <img src="images/cleaning-supplies.jpg" alt="">
-        <img src="images/daytime-porter.jpg" alt="">
-        <img src="images/floor-mopping-wide.jpg" alt="">
-        <img src="images/window-cleaning.jpg" alt="">
-        <img src="images/carpet-vacuum.jpg" alt="">
+        <img class="on" src="images/svc-janitorial.jpg" alt="">
+        <img src="images/svc-disinfecting.jpg" alt="">
+        <img src="images/svc-daytime-porter.jpg" alt="">
+        <img src="images/svc-deep-cleaning.jpg" alt="">
+        <img src="images/svc-green-cleaning.jpg" alt="">
+        <img src="images/svc-carpet.jpg" alt="">
         <div class="cap"><i></i><span id="svCap">Janitorial Services</span></div>
       </div>
     </div>
@@ -453,53 +479,89 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
 
 <!-- WHY CHOOSE -->
 <section class="why" id="why">
-  <div class="wrap why-grid">
-    <div class="why-side rv-up">
-      <span class="kicker">Why Choose Simplex</span>
-      <h2 class="display">A cleaning partner, not just a contractor.</h2>
-      <p>Choosing a commercial cleaning partner is an important decision. Simplex is distinguished by its outstanding service and its dedication to every client it works with.</p>
-      <div class="img cut"><img src="images/daytime-porter.jpg" alt="Simplex porter maintaining a commercial building"></div>
-    </div>
-    <div class="why-list rv-up">
-      <article><span class="ix">01</span><h3>Local Expertise</h3><p>Operating in Calgary since 2009, we understand the specific cleaning needs of local businesses and buildings.</p></article>
-      <article><span class="ix">02</span><h3>Five-Star Reputation</h3><p>Consistent service quality has earned us a strong five-star rating from our clients.</p></article>
-      <article><span class="ix">03</span><h3>Customized Solutions</h3><p>Cleaning plans tailored to each client's business and industry.</p></article>
-      <article><span class="ix">04</span><h3>Personalized Service</h3><p>As a locally owned business, we offer a more personal, attentive approach than large corporations or franchises.</p></article>
-      <article><span class="ix">05</span><h3>Industry-Specific Programs</h3><p>Specialized cleaning programs designed to meet the standards of different industries.</p></article>
-      <article><span class="ix">06</span><h3>Independent Operation</h3><p>As an independent, non-franchise company, we make flexible, client-focused decisions and customize our services.</p></article>
-      <article><span class="ix">07</span><h3>Commitment to Excellence</h3><p>Our dedication to top-quality janitorial work delivers excellent cleanliness and client satisfaction.</p></article>
-      <article><span class="ix">08</span><h3>Health &amp; Safety Compliant</h3><p>We meet health and safety requirements, with eco-friendly products and performance monitoring on every account.</p></article>
+  <div class="wrap">
+    <div class="bento rv-up">
+      <div class="b-head">
+        <span class="kicker">Why Choose Simplex</span>
+        <h2 class="display">A cleaning partner, not just a contractor.</h2>
+        <p>Choosing a commercial cleaning partner is an important decision. Simplex is distinguished by its outstanding service and its dedication to every client it works with.</p>
+      </div>
+      <div class="b-img">
+        <img src="images/condo-hallway.jpg" alt="Simplex cleaner with a janitorial cart in a condo building hallway">
+        <div class="tag"><i></i>Condos · Apartments · Commercial</div>
+      </div>
+      <div class="b-dark">
+        <span class="b-big">2009</span>
+        <h3>Local Expertise</h3>
+        <p>Operating in Calgary since 2009, we understand the specific cleaning needs of local businesses and buildings.</p>
+      </div>
+      <div class="b-grad">
+        <div class="b-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div>
+        <h3>Five-Star Reputation</h3>
+        <p>Consistent service quality has earned us a strong five-star rating from our clients.</p>
+      </div>
+      <div class="b-paper">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+        <h3>Customized Solutions</h3>
+        <p>Cleaning plans tailored to each client's business and industry.</p>
+      </div>
+      <div class="b-paper">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+        <h3>Personalized Service</h3>
+        <p>As a locally owned business, we offer a more personal, attentive approach than large corporations or franchises.</p>
+      </div>
+      <div class="b-paper">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 10h.01M15 10h.01"/></svg></div>
+        <h3>Industry-Specific Programs</h3>
+        <p>Specialized cleaning programs designed to meet the standards of different industries.</p>
+      </div>
+      <div class="b-paper">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Independent Operation</h3>
+        <p>As an independent, non-franchise company, we make flexible, client-focused decisions and customize our services.</p>
+      </div>
+      <div class="b-ink b-wide">
+        <div class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14.2L7 22l5-3 5 3-1.5-7.8"/></svg></div>
+        <div><h3>Commitment to Excellence</h3><p>Our dedication to top-quality janitorial work delivers excellent cleanliness and client satisfaction.</p></div>
+      </div>
+      <div class="b-line b-wide">
+        <div class="b-ico" style="background:var(--paper)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <div><h3>Health &amp; Safety Compliant</h3><p>We meet health and safety requirements, with eco-friendly products and performance monitoring on every account.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- STANDARD FOR ALL CLIENTS -->
 <section class="standard" id="standard">
+  <div class="bg"><img src="images/lobby-wide.jpg" alt="Spotless commercial building lobby being mopped by a Simplex cleaner"></div>
   <div class="wrap">
-    <div class="std-banner rv-up">
-      <img src="images/floor-mopping-wide.jpg" alt="Floor being cleaned with a microfiber mop">
-      <div class="txt">
+    <div class="std-top rv-up">
+      <div>
         <span class="kicker">Standard for all clients</span>
-        <h2 class="display">One standard. Every building.</h2>
+        <h2 class="display">One standard.<br>Every building.</h2>
       </div>
+      <p>Exceptional service, flawless results, competitive pricing and regular quality checks, applied the same way for every client we clean for.</p>
     </div>
-    <div class="pillars rv-up">
-      <article>
+  </div>
+  <div class="wrap">
+    <div class="std-cards rv-up">
+      <article class="std-card"><span class="no">01</span>
         <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 34V14a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H18l-10 8z"/><path d="M16 19h16M16 25h10"/></svg>
         <h3>Exceptional Service</h3>
         <p>We take pride in our company culture. Communication and teamwork come first, so you always know what work is being done and how.</p>
       </article>
-      <article>
+      <article class="std-card"><span class="no">02</span>
         <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4l5.5 11.6 12.5 1.6-9.2 8.7 2.3 12.5L24 32.3l-11.1 6.1 2.3-12.5L6 17.2l12.5-1.6z"/></svg>
         <h3>Flawless Results</h3>
         <p>We respond to feedback and bring the same quality and reliability to every client, following strict standards to exceed expectations.</p>
       </article>
-      <article>
+      <article class="std-card"><span class="no">03</span>
         <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="18"/><path d="M29 17.5c-1-1.6-2.9-2.5-5-2.5-3 0-5 1.6-5 4s2 3.4 5 4 5 1.8 5 4.3-2.2 4.2-5 4.2c-2.3 0-4.3-1-5.2-2.7M24 11v4M24 33v4"/></svg>
         <h3>Competitive Pricing</h3>
         <p>Every business is different, and price never comes at the cost of quality. We learn your needs and expectations before we quote.</p>
       </article>
-      <article>
+      <article class="std-card"><span class="no">04</span>
         <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="8" width="28" height="34" rx="2"/><path d="M18 8V5h12v3M16 22l4 4 8-8M16 34h16"/></svg>
         <h3>Quality Assurance Checks</h3>
         <p>Once your routine is set, we follow up regularly, and our operations managers inspect our cleaners' work on a regular basis.</p>
