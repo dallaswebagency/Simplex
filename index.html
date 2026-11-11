@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simplex Cleaning | Premier Janitorial Services in Calgary &amp; Western Canada</title>
+<meta name="description" content="Simplex Cleaning: commercial janitorial, office, condo and apartment cleaning in Calgary, across Alberta and Western Canada. 30+ years of experience. Request a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a1620;
+  --navy:#0b2131;
+  --navy-2:#11304a;
+  --blue:#1480c0;
+  --cyan:#22b4e0;
+  --aqua:#4fd1c0;
+  --paper:#f2f6f8;
+  --white:#ffffff;
+  --muted:#5a6b78;
+  --line:rgba(10,22,32,.12);
+  --line-dark:rgba(255,255,255,.14);
+  --grad:linear-gradient(120deg,var(--blue) 0%,var(--cyan) 55%,var(--aqua) 100%);
+  --cut:44px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92vw);margin-inline:auto}
+.display{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:800;letter-spacing:-.025em;line-height:1.02}
+.kicker{font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:.7rem}
+.kicker::before{content:"";width:28px;height:2px;background:var(--grad)}
+.cut{clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+.cut-bl{clip-path:polygon(0 0,100% 0,100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+.btn{display:inline-flex;align-items:center;gap:.65rem;font-weight:700;font-size:.98rem;padding:1rem 1.5rem;border:2px solid transparent;transition:.25s ease;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--blue)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* ===== utility bar ===== */
+.util{background:var(--ink);color:rgba(255,255,255,.78);font-size:.84rem}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem 0}
+.util .areas{letter-spacing:.06em}
+.util .areas b{color:var(--aqua);font-weight:600}
+.util .links{display:flex;gap:1.6rem}
+.util a:hover{color:#fff}
+
+/* ===== header ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo img{height:48px;width:auto}
+nav.main{display:flex;gap:2.2rem;font-weight:600;font-size:.95rem}
+nav.main a{position:relative;padding:.3rem 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--grad);transition:.3s}
+nav.main a:hover::after{width:100%}
+.head-right{display:flex;align-items:center;gap:1rem}
+.li-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);transition:.2s}
+.li-icon:hover{background:var(--ink);color:#fff}
+.li-icon svg{width:17px;height:17px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px}
+
+/* ===== hero ===== */
+.hero{position:relative;padding:72px 0 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 96px;
+  mask-image:linear-gradient(180deg,#000 0%,transparent 80%);opacity:.6;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:4.5rem;align-items:end}
+.hero h1{font-size:clamp(2.7rem,5.6vw,5.1rem);margin:1.4rem 0 1.6rem}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:1.14rem;color:var(--muted);max-width:590px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin:2.2rem 0 3.2rem}
+.for-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.for-tags span{font-size:.82rem;font-weight:600;padding:.4rem .8rem;border:1px solid var(--line);background:#fff}
+.hero-media{position:relative;align-self:stretch;min-height:560px}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero-media .stamp{position:absolute;left:-56px;bottom:56px;background:var(--navy);color:#fff;padding:1.4rem 1.6rem;width:230px;z-index:2}
+.stamp .yr{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:2.6rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stamp p{font-size:.88rem;color:rgba(255,255,255,.8);margin-top:.4rem;line-height:1.45}
+.spec{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:0;background:#fff}
+.spec div{padding:1.6rem 1.6rem 1.5rem;border-right:1px solid var(--line)}
+.spec div:last-child{border-right:0}
+.spec b{display:block;font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:800;font-size:1.65rem;line-height:1.1}
+.spec span{font-size:.88rem;color:var(--muted)}
+
+/* ===== specialties ===== */
+.special{background:var(--paper);padding:84px 0}
+.special-row{display:grid;grid-template-columns:.8fr 2fr;gap:3rem;align-items:start}
+.special h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-top:1rem}
+.special-list{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}
+.special-list article{padding:0 1.8rem;border-right:1px solid var(--line)}
+.special-list .n{font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:700;color:var(--blue);font-size:.8rem;letter-spacing:.14em}
+.special-list h3{font-family:'Archivo',sans-serif;font-stretch:110%;font-weight:800;font-size:1.45rem;line-height:1.15;margin:.8rem 0 .7rem}
+.special-list p{font-size:.95rem;color:var(--muted)}
+
+/* ===== services directory ===== */
+.services{padding:110px 0}
+.sv-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3.2rem}
+.sv-head h2{font-size:clamp(2.3rem,4.4vw,3.8rem);margin-top:1rem}
+.sv-head p{max-width:380px;color:var(--muted)}
+.sv-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:start}
+.sv-list{border-top:2px solid var(--ink)}
+.sv-item{display:grid;grid-template-columns:70px 1fr 40px;gap:1rem;align-items:start;padding:1.7rem 0;border-bottom:1px solid var(--line);cursor:pointer;transition:padding .3s}
+.sv-item .num{font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:700;color:var(--muted);font-size:.85rem;padding-top:.45rem}
+.sv-item h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:800;font-size:1.6rem;line-height:1.2;transition:color .25s}
+.sv-item p{color:var(--muted);font-size:.97rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s,margin .3s}
+.sv-item .arrow{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;transition:.3s;margin-top:.15rem}
+.sv-item .arrow svg{width:16px;height:16px;transition:.3s}
+.sv-item.active h3{color:var(--blue)}
+.sv-item.active p{max-height:120px;opacity:1;margin-top:.6rem}
+.sv-item.active .arrow{background:var(--ink);border-color:var(--ink);color:#fff}
+.sv-item.active .arrow svg{transform:rotate(-45deg)}
+.sv-item .mob-img{display:none}
+.sv-preview{position:sticky;top:120px;aspect-ratio:4/5;overflow:hidden;background:var(--paper)}
+.sv-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .5s,transform .8s}
+.sv-preview img.on{opacity:1;transform:scale(1)}
+.sv-preview .cap{position:absolute;left:0;bottom:0;background:#fff;padding:.9rem 1.3rem;font-weight:700;font-size:.9rem;z-index:2;display:flex;gap:.6rem;align-items:center}
+.sv-preview .cap i{width:9px;height:9px;background:var(--grad);display:inline-block}
+
+/* ===== why choose ===== */
+.why{background:var(--navy);color:#fff;padding:120px 0;position:relative;overflow:hidden}
+.why::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border:1px solid var(--line-dark);border-radius:50%;box-shadow:0 0 0 80px rgba(255,255,255,.02),0 0 0 160px rgba(255,255,255,.015)}
+.why-grid{display:grid;grid-template-columns:.95fr 1.3fr;gap:5rem;position:relative;z-index:1}
+.why-side{position:sticky;top:120px;align-self:start}
+.why .kicker{color:var(--aqua)}
+.why h2{font-size:clamp(2.3rem,4.2vw,3.6rem);margin:1rem 0 1.4rem}
+.why-side>p{color:rgba(255,255,255,.72);font-size:1.05rem}
+.why-side .img{margin-top:2.4rem;aspect-ratio:16/10;overflow:hidden}
+.why-side .img img{width:100%;height:100%;object-fit:cover}
+.why-list{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-dark)}
+.why-list article{padding:2.1rem 2rem 2.2rem 0;border-bottom:1px solid var(--line-dark)}
+.why-list article:nth-child(odd){border-right:1px solid var(--line-dark)}
+.why-list article:nth-child(even){padding-left:2rem;padding-right:0}
+.why-list .ix{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:.8rem;letter-spacing:.12em;color:var(--aqua)}
+.why-list h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:700;font-size:1.3rem;margin:.7rem 0 .55rem}
+.why-list p{color:rgba(255,255,255,.68);font-size:.95rem}
+
+/* ===== standard ===== */
+.standard{padding:120px 0 110px}
+.std-banner{position:relative;height:420px;overflow:hidden}
+.std-banner img{width:100%;height:100%;object-fit:cover}
+.std-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,22,32,.88) 0%,rgba(10,22,32,.55) 45%,rgba(10,22,32,0) 75%)}
+.std-banner .txt{position:absolute;left:56px;top:50%;transform:translateY(-50%);z-index:2;color:#fff;max-width:520px}
+.std-banner .kicker{color:var(--aqua)}
+.std-banner h2{font-size:clamp(2.2rem,4.2vw,3.5rem);margin-top:1rem}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);margin:-90px 56px 0;position:relative;z-index:3;background:#fff;box-shadow:0 30px 60px -30px rgba(10,22,32,.35)}
+.pillars article{padding:2.2rem 1.8rem 2.4rem;border-right:1px solid var(--line);position:relative}
+.pillars article:last-child{border-right:0}
+.pillars article::before{content:"";position:absolute;top:0;left:0;height:4px;width:0;background:var(--grad);transition:width .45s}
+.pillars article:hover::before{width:100%}
+.pillars .ico{width:46px;height:46px;color:var(--blue);margin-bottom:1.3rem}
+.pillars h3{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:800;font-size:1.25rem;margin-bottom:.6rem}
+.pillars p{font-size:.93rem;color:var(--muted)}
+
+/* ===== certifications ===== */
+.certs{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.certs .wrap{display:grid;grid-template-columns:260px 1fr;align-items:center}
+.certs h2{font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:800;font-size:1.35rem;line-height:1.2;padding:2.4rem 2rem 2.4rem 0;border-right:1px solid var(--line)}
+.certs h2 small{display:block;font-family:'Figtree';font-weight:500;font-size:.85rem;color:var(--muted);margin-top:.4rem;letter-spacing:0}
+.cert-row{display:flex;justify-content:space-around;align-items:center;gap:1.5rem;padding:1.6rem 0 1.6rem 2rem}
+.cert-row img{height:74px;width:auto;filter:grayscale(1);opacity:.75;mix-blend-mode:multiply;transition:.3s}
+.cert-row img:hover{opacity:1}
+
+/* ===== reviews ===== */
+.reviews{padding:120px 0;background:var(--paper)}
+.rv-grid{display:grid;grid-template-columns:.8fr 2fr;gap:4rem}
+.rv-side h2{font-size:clamp(2.2rem,4vw,3.3rem);margin:1rem 0 1.4rem}
+.rating{display:flex;align-items:center;gap:1rem;margin-top:1.4rem}
+.rating .big{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:3.6rem;line-height:1}
+.stars{display:flex;gap:3px;color:#f2a93b}
+.stars svg{width:20px;height:20px}
+.rating small{display:block;color:var(--muted);font-size:.86rem;margin-top:.2rem}
+.rv-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.rv{background:#fff;padding:2.6rem 2.4rem 2.2rem;position:relative;display:flex;flex-direction:column}
+.rv:nth-child(2){margin-top:3.5rem}
+.rv .q{font-family:Georgia,serif;font-weight:900;font-size:5rem;line-height:.6;height:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rv blockquote{font-size:1.12rem;line-height:1.6;margin:1.2rem 0 2rem;flex:1}
+.rv footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:1.2rem}
+.rv footer b{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:700}
+.rv footer span{font-size:.82rem;color:var(--muted);display:block}
+
+/* ===== contact ===== */
+.contact{padding:120px 0;background:var(--white)}
+.ct-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:0;box-shadow:0 40px 80px -40px rgba(10,22,32,.3)}
+.ct-info{background:var(--grad);color:#fff;padding:3.6rem 3.2rem;position:relative;overflow:hidden}
+.ct-info::after{content:"";position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border:40px solid rgba(255,255,255,.12);border-radius:50%}
+.ct-info .kicker{color:#fff}
+.ct-info .kicker::before{background:#fff}
+.ct-info h2{font-size:clamp(2.2rem,3.6vw,3.1rem);margin:1rem 0 1.2rem}
+.ct-info>p{color:rgba(255,255,255,.88);max-width:400px}
+.ct-lines{margin-top:2.6rem;display:grid;gap:1.1rem;position:relative;z-index:1}
+.ct-lines>a,.ct-lines>div{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:rgba(10,22,32,.18);transition:.2s}
+.ct-lines a:hover{background:rgba(10,22,32,.32)}
+.ct-lines svg{width:20px;height:20px;flex:none}
+.ct-lines small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.ct-lines b{font-size:1.08rem}
+form.quote{background:#fff;padding:3.6rem 3.2rem;border:1px solid var(--line);border-left:0}
+form.quote h3{font-family:'Archivo',sans-serif;font-stretch:110%;font-weight:800;font-size:1.5rem;margin-bottom:.4rem}
+form.quote>p{color:var(--muted);font-size:.95rem;margin-bottom:2rem}
+.field{position:relative;margin-bottom:1.3rem}
+.field label{display:block;font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.45rem}
+.field input,.field textarea{width:100%;border:0;border-bottom:2px solid var(--line);padding:.7rem 0;font:inherit;font-size:1rem;background:transparent;outline:none;transition:border-color .25s}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--blue)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
+
+/* ===== footer ===== */
+.site-foot{background:var(--ink);color:rgba(255,255,255,.7);padding:80px 0 0}
+.ft-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3.5rem}
+.ft-top img{height:52px;width:auto;margin-bottom:1.3rem}
+.ft-top p{font-size:.93rem;max-width:330px}
+.ft-top h4{font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:700;color:#fff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.2rem}
+.ft-top ul{list-style:none;display:grid;gap:.6rem;font-size:.95rem}
+.ft-top a:hover{color:var(--aqua)}
+.ft-big{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(4rem,15vw,13.5rem);line-height:.8;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.14);text-align:center;user-select:none;overflow:hidden;padding-top:.2rem}
+.ft-bottom{border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;gap:1rem;padding:1.4rem 0;font-size:.86rem}
+.ft-bottom a{color:#fff;font-weight:600}
+.ft-bottom a:hover{color:var(--aqua)}
+
+.call-fab{display:none}
+
+/* reveal */
+.rv-up{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv-up.in{opacity:1;transform:none}
+
+/* ===== responsive ===== */
+@media (max-width:1080px){
+  nav.main{display:none}
+  nav.main.open{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line)}
+  nav.main.open a{padding:1rem 4vw;border-top:1px solid var(--line)}
+  .burger{display:block}
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-media{min-height:440px;margin-left:56px}
+  .spec{grid-template-columns:1fr 1fr}
+  .spec div:nth-child(2){border-right:0}
+  .spec div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .special-row,.why-grid,.rv-grid{grid-template-columns:1fr;gap:2.5rem}
+  .why-side{position:static}
+  .sv-grid{grid-template-columns:1fr}
+  .sv-preview{display:none}
+  .sv-item .mob-img{display:block;max-height:0;overflow:hidden;transition:max-height .45s;grid-column:2/4}
+  .sv-item.active .mob-img{max-height:260px;margin-top:.4rem}
+  .sv-item .mob-img img{width:100%;height:220px;object-fit:cover}
+  .pillars{grid-template-columns:1fr 1fr;margin:-70px 24px 0}
+  .pillars article:nth-child(2){border-right:0}
+  .pillars article:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .certs .wrap{grid-template-columns:1fr}
+  .certs h2{border-right:0;border-bottom:1px solid var(--line);padding:2rem 0 1.4rem}
+  .cert-row{flex-wrap:wrap;padding:1.6rem 0;justify-content:center}
+  .ct-grid{grid-template-columns:1fr}
+  form.quote{border-left:1px solid var(--line);border-top:0}
+  .ft-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .util .areas{display:none}
+  .util .wrap{justify-content:center}
+  header .wrap{height:72px}
+  nav.main.open{top:72px}
+  .logo img{height:40px}
+  .head-right .btn,.head-right .li-icon{display:none}
+  .hero{padding-top:44px}
+  .hero-media{margin-left:0;min-height:380px}
+  .hero-media .stamp{left:0;bottom:0;width:auto;right:auto}
+  .special-list{grid-template-columns:1fr;border-left:0}
+  .special-list article{border-right:0;border-top:1px solid var(--line);padding:1.5rem 0}
+  .sv-head{flex-direction:column;align-items:flex-start}
+  .sv-item{grid-template-columns:44px 1fr 36px}
+  .sv-item h3{font-size:1.3rem}
+  .why-list{grid-template-columns:1fr}
+  .why-list article:nth-child(n){padding:1.7rem 0;border-right:0}
+  .std-banner{height:380px}
+  .std-banner .txt{left:24px;right:24px}
+  .pillars{grid-template-columns:1fr;margin:-50px 0 0}
+  .pillars article{border-right:0;border-bottom:1px solid var(--line)}
+  .cert-row img{height:56px}
+  .rv-cards{grid-template-columns:1fr}
+  .rv:nth-child(2){margin-top:0}
+  .ct-info,form.quote{padding:2.6rem 1.6rem}
+  .two{grid-template-columns:1fr;gap:0}
+  .ft-top{grid-template-columns:1fr}
+  .ft-bottom{flex-direction:column;text-align:center;padding-bottom:5.5rem}
+  .call-fab{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;justify-content:center;background:var(--ink);color:#fff;font-weight:700;padding:1rem;gap:.6rem;align-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45)}
+  .call-fab svg{width:18px;height:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="areas">Serving <b>Calgary</b> · <b>Alberta</b> · <b>Western Canada</b></div>
+    <div class="links">
+      <a href="tel:+14036161565">1 (403) 616 1565</a>
+      <a href="mailto:simplexsmi@gmail.com">simplexsmi@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Simplex Cleaning home"><img src="images/simplex-logo.png" alt="Simplex Cleaning logo"></a>
+    <nav class="main" id="nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why Simplex</a>
+      <a href="#standard">Our Standard</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="head-right">
+      <a class="li-icon" href="http://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-primary">Free Quote</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="kicker">Commercial Janitorial · Condos · Apartments</span>
+        <h1 class="display">Premier janitorial services <em>tailored</em> to your needs.</h1>
+        <p class="lede">With over 30 years of experience, Simplex is a leading janitorial provider in Calgary, across Alberta and throughout Western Canada. Trained staff, high cleanliness standards and eco-friendly products, with flexible service and performance monitoring built in.</p>
+        <div class="ctas">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="tel:+14036161565" class="btn btn-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            1 (403) 616 1565</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="cut" style="position:absolute;inset:0;overflow:hidden">
+          <img src="images/office-crew-tall.jpg" alt="Simplex cleaning crew vacuuming carpet and cleaning glass in a commercial office">
+        </div>
+        <div class="stamp">
+          <div class="yr">2009</div>
+          <p>Calgary roots. Locally owned and independently operated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="spec">
+      <div><b>30+ Years</b><span>Janitorial experience</span></div>
+      <div><b>Since 2009</b><span>Serving Calgary</span></div>
+      <div><b>5-Star</b><span>Client reputation</span></div>
+      <div><b>Eco-Friendly</b><span>Products and practices</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="special">
+  <div class="wrap special-row rv-up">
+    <div>
+      <span class="kicker">What we specialize in</span>
+      <h2 class="display">Built for the buildings people live and work in.</h2>
+    </div>
+    <div class="special-list">
+      <article>
+        <div class="n">01</div>
+        <h3>Multifamily Condos</h3>
+        <p>Common areas, lobbies and shared spaces kept to a consistent, high standard.</p>
+      </article>
+      <article>
+        <div class="n">02</div>
+        <h3>Apartments</h3>
+        <p>Reliable janitorial programs that keep residents comfortable and buildings presentable.</p>
+      </article>
+      <article>
+        <div class="n">03</div>
+        <h3>Commercial Spaces</h3>
+        <p>Offices, healthcare, retail, multi-tenant and education facilities.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sv-head rv-up">
+      <div>
+        <span class="kicker">Our Services</span>
+        <h2 class="display">Six ways we keep<br>your space right.</h2>
+      </div>
+      <p>Select a service to see what it covers. Every plan is customized to your facility and industry.</p>
+    </div>
+    <div class="sv-grid">
+      <div class="sv-list" id="svList">
+        <div class="sv-item active" data-img="0">
+          <span class="num">01</span>
+          <div><h3>Janitorial Services</h3><p>Janitorial services for offices, healthcare facilities, retail facilities, multi-tenant, education facilities and more.</p>
+            <div class="mob-img"><img src="images/janitorial-cart-corridor.jpg" alt="Janitor pushing a cleaning cart down a commercial corridor"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+        <div class="sv-item" data-img="1">
+          <span class="num">02</span>
+          <div><h3>Disinfecting Service</h3><p>A disinfected space is critical to maintaining a healthy, productive environment. Simplex is here to help.</p>
+            <div class="mob-img"><img src="images/cleaning-supplies.jpg" alt="Cleaner holding a bucket of disinfecting supplies"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+        <div class="sv-item" data-img="2">
+          <span class="num">03</span>
+          <div><h3>Daytime Porter</h3><p>We help keep up with the daily traffic in your facility and maintain a consistent clean and healthy environment.</p>
+            <div class="mob-img"><img src="images/daytime-porter.jpg" alt="Day porter with cleaning cart in a busy facility"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+        <div class="sv-item" data-img="3">
+          <span class="num">04</span>
+          <div><h3>Deep Cleaning</h3><p>Intensive disinfection using EPA registered disinfectants. We will go above and beyond to do the job quickly and effectively.</p>
+            <div class="mob-img"><img src="images/floor-mopping-wide.jpg" alt="Microfiber mop deep cleaning a floor"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+        <div class="sv-item" data-img="4">
+          <span class="num">05</span>
+          <div><h3>Green Cleaning</h3><p>We use toxin-free cleaning supplies, color coded microfibers, energy efficient equipment, and no airborne chemicals or allergens.</p>
+            <div class="mob-img"><img src="images/window-cleaning.jpg" alt="Gloved hands cleaning a window with a microfiber cloth"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+        <div class="sv-item" data-img="5">
+          <span class="num">06</span>
+          <div><h3>Carpet &amp; Upholstery Cleaning</h3><p>Our professionally trained technicians utilize a 4-step cleaning process designed for carpets and upholstered surfaces.</p>
+            <div class="mob-img"><img src="images/carpet-vacuum.jpg" alt="Technician cleaning commercial carpet"></div></div>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="sv-preview cut-bl" id="svPreview">
+        <img class="on" src="images/janitorial-cart-corridor.jpg" alt="">
+        <img src="images/cleaning-supplies.jpg" alt="">
+        <img src="images/daytime-porter.jpg" alt="">
+        <img src="images/floor-mopping-wide.jpg" alt="">
+        <img src="images/window-cleaning.jpg" alt="">
+        <img src="images/carpet-vacuum.jpg" alt="">
+        <div class="cap"><i></i><span id="svCap">Janitorial Services</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div class="why-side rv-up">
+      <span class="kicker">Why Choose Simplex</span>
+      <h2 class="display">A cleaning partner, not just a contractor.</h2>
+      <p>Choosing a commercial cleaning partner is an important decision. Simplex is distinguished by its outstanding service and its dedication to every client it works with.</p>
+      <div class="img cut"><img src="images/daytime-porter.jpg" alt="Simplex porter maintaining a commercial building"></div>
+    </div>
+    <div class="why-list rv-up">
+      <article><span class="ix">01</span><h3>Local Expertise</h3><p>Operating in Calgary since 2009, we understand the specific cleaning needs of local businesses and buildings.</p></article>
+      <article><span class="ix">02</span><h3>Five-Star Reputation</h3><p>Consistent service quality has earned us a strong five-star rating from our clients.</p></article>
+      <article><span class="ix">03</span><h3>Customized Solutions</h3><p>Cleaning plans tailored to each client's business and industry.</p></article>
+      <article><span class="ix">04</span><h3>Personalized Service</h3><p>As a locally owned business, we offer a more personal, attentive approach than large corporations or franchises.</p></article>
+      <article><span class="ix">05</span><h3>Industry-Specific Programs</h3><p>Specialized cleaning programs designed to meet the standards of different industries.</p></article>
+      <article><span class="ix">06</span><h3>Independent Operation</h3><p>As an independent, non-franchise company, we make flexible, client-focused decisions and customize our services.</p></article>
+      <article><span class="ix">07</span><h3>Commitment to Excellence</h3><p>Our dedication to top-quality janitorial work delivers excellent cleanliness and client satisfaction.</p></article>
+      <article><span class="ix">08</span><h3>Health &amp; Safety Compliant</h3><p>We meet health and safety requirements, with eco-friendly products and performance monitoring on every account.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARD FOR ALL CLIENTS -->
+<section class="standard" id="standard">
+  <div class="wrap">
+    <div class="std-banner rv-up">
+      <img src="images/floor-mopping-wide.jpg" alt="Floor being cleaned with a microfiber mop">
+      <div class="txt">
+        <span class="kicker">Standard for all clients</span>
+        <h2 class="display">One standard. Every building.</h2>
+      </div>
+    </div>
+    <div class="pillars rv-up">
+      <article>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 34V14a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H18l-10 8z"/><path d="M16 19h16M16 25h10"/></svg>
+        <h3>Exceptional Service</h3>
+        <p>We take pride in our company culture. Communication and teamwork come first, so you always know what work is being done and how.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4l5.5 11.6 12.5 1.6-9.2 8.7 2.3 12.5L24 32.3l-11.1 6.1 2.3-12.5L6 17.2l12.5-1.6z"/></svg>
+        <h3>Flawless Results</h3>
+        <p>We respond to feedback and bring the same quality and reliability to every client, following strict standards to exceed expectations.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="18"/><path d="M29 17.5c-1-1.6-2.9-2.5-5-2.5-3 0-5 1.6-5 4s2 3.4 5 4 5 1.8 5 4.3-2.2 4.2-5 4.2c-2.3 0-4.3-1-5.2-2.7M24 11v4M24 33v4"/></svg>
+        <h3>Competitive Pricing</h3>
+        <p>Every business is different, and price never comes at the cost of quality. We learn your needs and expectations before we quote.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="8" width="28" height="34" rx="2"/><path d="M18 8V5h12v3M16 22l4 4 8-8M16 34h16"/></svg>
+        <h3>Quality Assurance Checks</h3>
+        <p>Once your routine is set, we follow up regularly, and our operations managers inspect our cleaners' work on a regular basis.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs">
+  <div class="wrap">
+    <h2>Certifications<small>Industry memberships and safety credentials</small></h2>
+    <div class="cert-row">
+      <img src="images/cert-boma.png" alt="BOMA Calgary">
+      <img src="images/cert-bscai.png" alt="BSCAI Verified Member">
+      <img src="images/cert-issa.png" alt="ISSA">
+      <img src="images/cert-cor.png" alt="Certificate of Recognition (COR)">
+      <img src="images/cert-workplace-safety.png" alt="Workplace safety certification">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap rv-grid">
+    <div class="rv-side rv-up">
+      <span class="kicker">Reviews</span>
+      <h2 class="display">What our clients say.</h2>
+      <div class="rating">
+        <div class="big">5.0</div>
+        <div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>
+          </div>
+          <small>Five-star client reputation</small>
+        </div>
+      </div>
+    </div>
+    <div class="rv-cards rv-up">
+      <div class="rv">
+        <div class="q">&ldquo;</div>
+        <blockquote>Simplex Cleaning is exceptional! Their team is professional, thorough, and reliable. Our buildings have never looked better. For top-notch janitorial services, they're the best choice!</blockquote>
+        <footer><div><b>Cynthia Wiley</b><span>Client Review</span></div><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div></footer>
+      </div>
+      <div class="rv">
+        <div class="q">&ldquo;</div>
+        <blockquote>Simplex Cleaning has transformed our properties with exceptional service, attention to detail, and reliability. Their team is professional, friendly, and adaptable. Highly recommended for top-tier janitorial services!</blockquote>
+        <footer><div><b>Elizabeth Morrison</b><span>Client Review</span></div><div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg></div></footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / QUOTE -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="ct-grid rv-up">
+      <div class="ct-info">
+        <span class="kicker">Contact Us</span>
+        <h2 class="display">Let us handle the dirty work.</h2>
+        <p>Tell us about your building and what you need. We learn your needs and expectations first, then send a free quote.</p>
+        <div class="ct-lines">
+          <a href="tel:+14036161565">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            <div><small>Call</small><b>1 (403) 616 1565</b></div></a>
+          <a href="mailto:simplexsmi@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div><small>Email</small><b>simplexsmi@gmail.com</b></div></a>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><small>Service Area</small><b>Calgary, Alberta &amp; Western Canada</b></div></div>
+        </div>
+      </div>
+      <form class="quote" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks! We will be in touch.';">
+        <h3>Request a free quote</h3>
+        <p>Fill in the form and our team will get back to you.</p>
+        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="e.g. Condo common area cleaning" required></div>
+        <div class="two">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your building, size and cleaning schedule"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <img src="images/simplex-logo-white.png" alt="Simplex Cleaning">
+        <p>Premier janitorial services for multifamily condos, apartments and commercial spaces in Calgary, Alberta and Western Canada.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Janitorial Services</a></li>
+          <li><a href="#services">Disinfecting Service</a></li>
+          <li><a href="#services">Daytime Porter</a></li>
+          <li><a href="#services">Deep Cleaning</a></li>
+          <li><a href="#services">Green Cleaning</a></li>
+          <li><a href="#services">Carpet &amp; Upholstery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Simplex</a></li>
+          <li><a href="#standard">Our Standard</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Free Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+14036161565">1 (403) 616 1565</a></li>
+          <li><a href="mailto:simplexsmi@gmail.com">simplexsmi@gmail.com</a></li>
+          <li><a href="http://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft-big" aria-hidden="true">SIMPLEX</div>
+  <div class="wrap ft-bottom">
+    <span>© All rights reserved</span>
+    <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital</a></span>
+  </div>
+</footer>
+
+<a class="call-fab" href="tel:+14036161565">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  Call 1 (403) 616 1565</a>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('.sv-item');
+  var imgs=document.querySelectorAll('#svPreview img');
+  var cap=document.getElementById('svCap');
+  function activate(el){
+    items.forEach(function(i){i.classList.remove('active')});
+    el.classList.add('active');
+    var n=+el.dataset.img;
+    imgs.forEach(function(im,ix){im.classList.toggle('on',ix===n)});
+    cap.textContent=el.querySelector('h3').textContent;
+  }
+  items.forEach(function(el){
+    el.addEventListener('click',function(){activate(el)});
+    el.addEventListener('mouseenter',function(){if(window.innerWidth>1080)activate(el)});
+  });
+  document.querySelectorAll('nav.main a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv-up').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
