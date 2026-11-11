@@ -65,28 +65,58 @@ nav.main a:hover::after{width:100%}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
 .burger span{display:block;height:2px;background:var(--ink);margin:6px 8px}
 
-/* ===== hero ===== */
-.hero{position:relative;padding:72px 0 0;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:
-  linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 96px;
-  mask-image:linear-gradient(180deg,#000 0%,transparent 80%);opacity:.6;pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:4.5rem;align-items:end}
-.hero h1{font-size:clamp(2.7rem,5.6vw,5.1rem);margin:1.4rem 0 1.6rem}
+/* ===== hero (wipe-the-glass) ===== */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 0% 100%,rgba(34,180,224,.18),transparent 60%),radial-gradient(40% 50% at 45% 0%,rgba(79,209,192,.10),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);min-height:min(calc(100svh - 120px),860px)}
+.hero-copy{padding:80px 4rem 70px max(4vw,calc((100vw - 1240px)/2));display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero .kicker{color:var(--aqua)}
+.hero .kicker::before{background:var(--aqua)}
+.hero h1{font-size:clamp(2.6rem,4.9vw,4.7rem);margin:1.3rem 0 1.5rem}
 .hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .lede{font-size:1.14rem;color:var(--muted);max-width:590px}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin:2.2rem 0 3.2rem}
-.for-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
-.for-tags span{font-size:.82rem;font-weight:600;padding:.4rem .8rem;border:1px solid var(--line);background:#fff}
-.hero-media{position:relative;align-self:stretch;min-height:560px}
-.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
-.hero-media .stamp{position:absolute;left:-56px;bottom:56px;background:var(--navy);color:#fff;padding:1.4rem 1.6rem;width:230px;z-index:2}
-.stamp .yr{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:2.6rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.stamp p{font-size:.88rem;color:rgba(255,255,255,.8);margin-top:.4rem;line-height:1.45}
-.spec{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:0;background:#fff}
+.hero .lede{font-size:1.08rem;color:rgba(255,255,255,.74);max-width:540px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin:2.2rem 0 2.8rem}
+.hero .btn-primary{background:#fff;color:var(--ink)}
+.hero .btn-primary:hover{background:var(--aqua);color:var(--ink)}
+.hero .btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.hero .btn-line:hover{background:#fff;color:var(--ink);border-color:#fff}
+.bldg-label{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.8rem}
+.bldg-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-dark);max-width:560px}
+.bldg-tabs button{position:relative;background:none;border:0;color:rgba(255,255,255,.55);text-align:left;padding:1rem .8rem 0 0;cursor:pointer;font:inherit;transition:color .3s}
+.bldg-tabs button::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:0;background:var(--grad)}
+.bldg-tabs button.on{color:#fff}
+.bldg-tabs button.on::before{animation:tabfill 7s linear forwards}
+.bldg-tabs.paused button.on::before{animation-play-state:paused}
+@keyframes tabfill{to{width:100%}}
+.bldg-tabs small{display:block;font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:700;font-size:.72rem;letter-spacing:.14em;color:var(--aqua);margin-bottom:.25rem}
+.bldg-tabs b{font-family:'Archivo',sans-serif;font-stretch:108%;font-weight:700;font-size:1.02rem}
+.hero-media{position:relative;overflow:hidden;cursor:none;touch-action:pan-y;min-height:520px}
+.hero-media .slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease,transform 1.6s ease;transform:scale(1.06)}
+.hero-media .slide.on{opacity:1;transform:scale(1)}
+.hero-media .slide img{width:100%;height:100%;object-fit:cover}
+#fog{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.squeegee{position:absolute;left:0;top:0;z-index:4;width:110px;height:34px;margin:-17px 0 0 -55px;pointer-events:none;opacity:0;transition:opacity .25s;transform-origin:center}
+.squeegee .blade{position:absolute;left:0;right:0;top:0;height:12px;background:#11202c;border-radius:3px;box-shadow:0 2px 0 var(--aqua)}
+.squeegee .handle{position:absolute;left:50%;top:10px;width:12px;height:30px;margin-left:-6px;background:linear-gradient(var(--cyan),var(--blue));border-radius:0 0 6px 6px}
+.hero-media:hover .squeegee{opacity:1}
+.wipe-hint{position:absolute;top:24px;right:24px;z-index:5;display:flex;align-items:center;gap:.6rem;background:rgba(11,33,49,.78);backdrop-filter:blur(8px);color:#fff;font-size:.84rem;font-weight:600;padding:.65rem 1rem;transition:opacity .5s}
+.wipe-hint i{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 0 rgba(79,209,192,.7);animation:ping 1.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(79,209,192,0)}100%{box-shadow:0 0 0 0 rgba(79,209,192,0)}}
+.wipe-meter{position:absolute;left:24px;right:24px;bottom:24px;z-index:5;display:flex;justify-content:space-between;align-items:end;gap:1rem;pointer-events:none}
+.wipe-meter .card{background:#fff;color:var(--ink);padding:1rem 1.2rem;min-width:200px}
+.wipe-meter .card small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.wipe-meter .card b{font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:800;font-size:1.15rem}
+.wipe-meter .bar{height:4px;background:var(--paper);margin-top:.6rem;overflow:hidden}
+.wipe-meter .bar span{display:block;height:100%;width:0;background:var(--grad);transition:width .3s}
+.wipe-meter .yr{background:var(--grad);color:#fff;padding:1rem 1.2rem;text-align:right}
+.wipe-meter .yr b{display:block;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:2rem;line-height:1}
+.wipe-meter .yr span{font-size:.78rem;font-weight:600}
+.spec-wrap{background:#fff;color:var(--ink);position:relative;z-index:3}
+.spec{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:#fff}
 .spec div{padding:1.6rem 1.6rem 1.5rem;border-right:1px solid var(--line)}
 .spec div:last-child{border-right:0}
 .spec b{display:block;font-family:'Archivo',sans-serif;font-stretch:115%;font-weight:800;font-size:1.65rem;line-height:1.1}
-.spec span{font-size:.88rem;color:var(--muted)}
+.spec>div>span{font-size:.88rem;color:var(--muted)}
 
 /* ===== specialties ===== */
 .special{background:var(--paper);padding:84px 0}
@@ -259,8 +289,9 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
   nav.main.open{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line)}
   nav.main.open a{padding:1rem 4vw;border-top:1px solid var(--line)}
   .burger{display:block}
-  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-media{min-height:440px;margin-left:56px}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding:70px 4vw 50px}
+  .hero-media{min-height:480px}
   .spec{grid-template-columns:1fr 1fr}
   .spec div:nth-child(2){border-right:0}
   .spec div:nth-child(-n+2){border-bottom:1px solid var(--line)}
@@ -291,9 +322,12 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
   nav.main.open{top:72px}
   .logo img{height:40px}
   .head-right .btn,.head-right .li-icon{display:none}
-  .hero{padding-top:44px}
-  .hero-media{margin-left:0;min-height:380px}
-  .hero-media .stamp{left:0;bottom:0;width:auto;right:auto}
+  .hero-copy{padding:50px 5vw 40px}
+  .hero-media{min-height:420px;cursor:auto}
+  .wipe-hint{top:14px;right:14px;font-size:.78rem}
+  .wipe-meter{left:14px;right:14px;bottom:14px}
+  .wipe-meter .card{min-width:0;flex:1}
+  .bldg-tabs b{font-size:.9rem}
   .special-list{grid-template-columns:1fr;border-left:0}
   .special-list article{border-right:0;border-top:1px solid var(--line);padding:1.5rem 0}
   .sv-head{flex-direction:column;align-items:flex-start}
@@ -353,39 +387,46 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="kicker">Commercial Janitorial · Condos · Apartments</span>
-        <h1 class="display">Premier janitorial services <em>tailored</em> to your needs.</h1>
-        <p class="lede">With over 30 years of experience, Simplex is a leading janitorial provider in Calgary, across Alberta and throughout Western Canada. Trained staff, high cleanliness standards and eco-friendly products, with flexible service and performance monitoring built in.</p>
-        <div class="ctas">
-          <a href="#contact" class="btn btn-primary">Get a Free Quote
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="tel:+14036161565" class="btn btn-line">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-            1 (403) 616 1565</a>
-        </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">Commercial Janitorial · Condos · Apartments</span>
+      <h1 class="display">Premier janitorial services <em>tailored</em> to your needs.</h1>
+      <p class="lede">With over 30 years of experience, Simplex is a leading janitorial provider in Calgary, across Alberta and throughout Western Canada. Trained staff, high cleanliness standards and eco-friendly products, with flexible service and performance monitoring built in.</p>
+      <div class="ctas">
+        <a href="#contact" class="btn btn-primary">Get a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:+14036161565" class="btn btn-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          1 (403) 616 1565</a>
       </div>
-      <div class="hero-media">
-        <div class="cut" style="position:absolute;inset:0;overflow:hidden">
-          <img src="images/hero-office-crew.jpg" alt="Simplex cleaning crew vacuuming carpet and cleaning glass in a commercial office">
-        </div>
-        <div class="stamp">
-          <div class="yr">2009</div>
-          <p>Calgary roots. Locally owned and independently operated.</p>
-        </div>
+      <div class="bldg-label">We specialize in</div>
+      <div class="bldg-tabs" id="bldgTabs">
+        <button class="on" data-i="0"><small>01</small><b>Commercial Spaces</b></button>
+        <button data-i="1"><small>02</small><b>Multifamily Condos</b></button>
+        <button data-i="2"><small>03</small><b>Apartments</b></button>
+      </div>
+    </div>
+    <div class="hero-media" id="heroMedia">
+      <div class="slide on"><img src="images/hero-office-crew.jpg" alt="Simplex crew vacuuming carpet and cleaning glass in a commercial office"></div>
+      <div class="slide"><img src="images/svc-daytime-porter.jpg" alt="Simplex porter wiping the front desk in a condo lobby"></div>
+      <div class="slide"><img src="images/condo-hallway.jpg" alt="Simplex cleaner with a cart in an apartment building hallway"></div>
+      <canvas id="fog" aria-hidden="true"></canvas>
+      <div class="squeegee" id="squeegee"><div class="blade"></div><div class="handle"></div></div>
+      <div class="wipe-hint" id="wipeHint"><i></i>Wipe the glass to see the Simplex clean</div>
+      <div class="wipe-meter">
+        <div class="card"><small>Glass cleaned</small><b id="wipePct">0%</b><div class="bar"><span id="wipeBar"></span></div></div>
+        <div class="yr"><b>2009</b><span>Calgary roots</span></div>
       </div>
     </div>
   </div>
-  <div class="wrap">
+  <div class="spec-wrap"><div class="wrap">
     <div class="spec">
-      <div><b>30+ Years</b><span>Janitorial experience</span></div>
+      <div><b><span class="count" data-to="30">0</span>+ Years</b><span>Janitorial experience</span></div>
       <div><b>Since 2009</b><span>Serving Calgary</span></div>
-      <div><b>5-Star</b><span>Client reputation</span></div>
+      <div><b><span class="count" data-to="5">0</span>-Star</b><span>Client reputation</span></div>
       <div><b>Eco-Friendly</b><span>Products and practices</span></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- SPECIALTIES -->
@@ -724,6 +765,69 @@ form.quote .btn{margin-top:.8rem;width:100%;justify-content:center}
   document.querySelectorAll('nav.main a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.rv-up').forEach(function(el){io.observe(el)});
+})();
+
+/* ---- hero: building tabs + wipe-the-glass ---- */
+(function(){
+  var media=document.getElementById('heroMedia'),cv=document.getElementById('fog'),ctx=cv.getContext('2d');
+  var slides=media.querySelectorAll('.slide'),tabs=document.querySelectorAll('#bldgTabs button'),tabWrap=document.getElementById('bldgTabs');
+  var sq=document.getElementById('squeegee'),hint=document.getElementById('wipeHint'),pctEl=document.getElementById('wipePct'),bar=document.getElementById('wipeBar');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=0,timer,last=null,W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2),hinted=false,fogCv=document.createElement('canvas'),fctx=fogCv.getContext('2d');
+  function imgOf(i){return slides[i].querySelector('img')}
+  function buildFog(){
+    var img=imgOf(cur);if(!img.complete||!img.naturalWidth){img.onload=buildFog;return}
+    fogCv.width=W;fogCv.height=H;
+    var r=Math.max(W/img.naturalWidth,H/img.naturalHeight),iw=img.naturalWidth*r,ih=img.naturalHeight*r;
+    fctx.filter='blur('+(18*dpr)+'px) saturate(.7)';
+    fctx.drawImage(img,(W-iw)/2,(H-ih)/2,iw,ih);fctx.filter='none';
+    var g=fctx.createLinearGradient(0,0,W,H);g.addColorStop(0,'rgba(225,240,247,.62)');g.addColorStop(1,'rgba(190,220,232,.5)');
+    fctx.fillStyle=g;fctx.fillRect(0,0,W,H);
+    for(var k=0;k<W*H/(2600*dpr);k++){var x=Math.random()*W,y=Math.random()*H,rr=(Math.random()*2.6+.6)*dpr;fctx.beginPath();fctx.arc(x,y,rr,0,7);fctx.fillStyle='rgba(255,255,255,'+(Math.random()*.35+.1)+')';fctx.fill()}
+    ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,W,H);ctx.drawImage(fogCv,0,0);grid.fill(0);
+  }
+  function size(){var b=media.getBoundingClientRect();W=cv.width=Math.round(b.width*dpr);H=cv.height=Math.round(b.height*dpr);buildFog()}
+  function wipe(x0,y0,x1,y1){
+    ctx.globalCompositeOperation='destination-out';ctx.lineCap='round';ctx.lineJoin='round';
+    ctx.lineWidth=96*dpr;ctx.strokeStyle='rgba(0,0,0,1)';ctx.beginPath();ctx.moveTo(x0*dpr,y0*dpr);ctx.lineTo(x1*dpr,y1*dpr);ctx.stroke();
+    var steps=Math.max(1,Math.ceil(Math.hypot(x1-x0,y1-y0)/16));for(var k=0;k<=steps;k++)mark(x0+(x1-x0)*k/steps,y0+(y1-y0)*k/steps);
+  }
+  var GX=48,GY=36,grid=new Uint8Array(GX*GY);
+  function mark(x,y){var b=media.getBoundingClientRect(),r=48;
+    var cx0=Math.max(0,Math.floor((x-r)/b.width*GX)),cx1=Math.min(GX-1,Math.floor((x+r)/b.width*GX)),cy0=Math.max(0,Math.floor((y-r)/b.height*GY)),cy1=Math.min(GY-1,Math.floor((y+r)/b.height*GY));
+    for(var gy=cy0;gy<=cy1;gy++)for(var gx=cx0;gx<=cx1;gx++){var px=(gx+.5)*b.width/GX,py=(gy+.5)*b.height/GY;if((px-x)*(px-x)+(py-y)*(py-y)<=r*r)grid[gy*GX+gx]=1}}
+  function measure(){
+    var c=0;for(var i=0;i<grid.length;i++)c+=grid[i];
+    var p=Math.min(100,Math.round(c/grid.length*100));pctEl.textContent=p>=95?'100% Simplex clean':p+'%';bar.style.width=(p>=95?100:p)+'%';
+  }
+  var mt=0;function measureSoon(){if(mt)return;mt=setTimeout(function(){mt=0;measure()},120)}
+  function pos(e){var b=media.getBoundingClientRect();return{x:e.clientX-b.left,y:e.clientY-b.top}}
+  media.addEventListener('pointermove',function(e){
+    var p=pos(e);sq.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+(last?Math.max(-25,Math.min(25,(p.x-last.x)*1.2)):0)+'deg)';
+    if(reduce)return;
+    if(last)wipe(last.x,last.y,p.x,p.y);last=p;measureSoon();
+    if(!hinted){hinted=true;hint.style.opacity=0}
+    tabWrap.classList.add('paused');clearTimeout(timer);
+  });
+  media.addEventListener('pointerleave',function(){last=null;tabWrap.classList.remove('paused');schedule()});
+  function autoWipe(){
+    if(reduce){ctx.clearRect(0,0,W,H);grid.fill(1);measure();return}
+    var b=media.getBoundingClientRect(),w=b.width,h=b.height,t=0,pts=[];
+    for(var i=0;i<=60;i++){var u=i/60;pts.push({x:w*(.12+.76*(.5+.5*Math.sin(u*Math.PI*3-Math.PI/2))),y:h*(.14+.5*u)})}
+    var prev=pts[0];(function step(){t++;if(t>=pts.length){measure();return}wipe(prev.x,prev.y,pts[t].x,pts[t].y);prev=pts[t];requestAnimationFrame(step)})();
+  }
+  function show(i){
+    cur=i;slides.forEach(function(s,ix){s.classList.toggle('on',ix===i)});
+    tabs.forEach(function(t,ix){t.classList.remove('on');if(ix===i){void t.offsetWidth;t.classList.add('on')}});
+    buildFog();measure();setTimeout(autoWipe,350);schedule();
+  }
+  function schedule(){clearTimeout(timer);timer=setTimeout(function(){show((cur+1)%slides.length)},7000)}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.dataset.i)})});
+  window.addEventListener('resize',function(){clearTimeout(size.t);size.t=setTimeout(function(){size();autoWipe()},200)});
+  size();setTimeout(autoWipe,500);schedule();
+  /* count up */
+  document.querySelectorAll('.count').forEach(function(el){var to=+el.dataset.to,s=null;
+    (function(){function f(ts){if(!s)s=ts;var k=Math.min(1,(ts-s)/1400);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};setTimeout(function(){requestAnimationFrame(f)},300)})(0)});
 })();
 </script>
 </body>
